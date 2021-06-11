@@ -136,6 +136,7 @@ public class TestString {
         }
         System.out.println("大小写转化");
         System.out.println(str1.toLowerCase().toUpperCase());
+        System.out.println("1111111111111");
     }
     @Test
     public void test7() {
