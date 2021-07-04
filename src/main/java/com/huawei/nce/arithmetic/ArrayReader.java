@@ -1,4 +1,4 @@
-﻿package com.huawei.nce.arithmetic;
+package com.huawei.nce.arithmetic;
 
 /**
  * TODO
