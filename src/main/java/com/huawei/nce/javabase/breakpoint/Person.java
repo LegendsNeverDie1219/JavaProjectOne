@@ -1,6 +1,4 @@
-package com.huawei.nce.breakpoint;
-
-import lombok.*;
+package com.huawei.nce.javabase.breakpoint;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package com.huawei.nce.myinterface;
+package com.huawei.nce.java8.myinterface;
 
 /**
  * 定义一个过滤方法的接口

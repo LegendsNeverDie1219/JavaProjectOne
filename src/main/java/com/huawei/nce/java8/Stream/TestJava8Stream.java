@@ -47,7 +47,7 @@ public class TestJava8Stream {
         Arrays.stream(integers).forEach(System.out::println);
         // 3.使用Stream的静态方法 of() iterate() generate()
         System.out.println("Stream的静态方法of() ===================================");
-        Stream.of("aa", "bb", "cc").forEach(System.out::println);
+        Stream.of("Plugins", "bb", "cc").forEach(System.out::println);
         System.out.println("Stream的静态方法 iterate() =============================");
         Stream.iterate(0, (x) -> x + 2).limit(5).forEach(System.out::println);
         System.out.println("Stream的静态方法 generate() ==================");

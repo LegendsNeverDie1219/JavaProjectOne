@@ -1,9 +1,9 @@
 package com.huawei.nce.java8.lambda;
 
 import com.google.common.collect.Lists;
-import com.huawei.nce.myimplements.ColorMyPredicate;
-import com.huawei.nce.myimplements.PriceMyPredicate;
-import com.huawei.nce.myinterface.MyPredicate;
+import com.huawei.nce.java8.myimplements.ColorMyPredicate;
+import com.huawei.nce.java8.myimplements.PriceMyPredicate;
+import com.huawei.nce.java8.myinterface.MyPredicate;
 import com.huawei.nce.pojo.NumberConstant;
 import com.huawei.nce.pojo.Product;
 import org.junit.jupiter.api.Test;

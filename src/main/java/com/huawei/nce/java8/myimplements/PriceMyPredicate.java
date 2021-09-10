@@ -1,7 +1,7 @@
-package com.huawei.nce.myimplements;
+package com.huawei.nce.java8.myimplements;
 
 
-import com.huawei.nce.myinterface.MyPredicate;
+import com.huawei.nce.java8.myinterface.MyPredicate;
 import com.huawei.nce.pojo.Product;
 
 /**

@@ -1,4 +1,4 @@
-package com.huawei.nce.breakpoint;
+package com.huawei.nce.javabase.breakpoint;
 
 import com.google.common.collect.Lists;
 import com.huawei.nce.pojo.Product;

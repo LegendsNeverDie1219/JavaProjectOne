@@ -1,4 +1,4 @@
-package com.huawei.nce.javabase.testyunsuanfu;
+package com.huawei.nce.javabase.day04;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
  * @author Administrator
  * @date 2020/12/26 16:09
  */
-public class TestYunSuanFu {
+public class OperatorTest {
     @Test
     public void $_testDuanLuYu() {
         int a = 0;
@@ -61,5 +61,5 @@ public class TestYunSuanFu {
         }
     }
 
-private TestYunSuanFu(){}
+private OperatorTest(){}
 }

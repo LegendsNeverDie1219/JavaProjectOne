@@ -1,4 +1,4 @@
-package com.huawei.nce.breakpoint;
+package com.huawei.nce.javabase.breakpoint;
 
 /**
  * TODO

@@ -1,4 +1,4 @@
-package com.huawei.nce.myinterface;
+package com.huawei.nce.java8.myinterface;
 
 /**
  * TODO

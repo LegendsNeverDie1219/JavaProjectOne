@@ -1,6 +1,4 @@
-package com.huawei.nce.breakpoint;
-
-import lombok.SneakyThrows;
+package com.huawei.nce.javabase.breakpoint;
 
 import java.util.concurrent.TimeUnit;
 
