@@ -106,6 +106,4 @@ public class RecursiveCallTest {
             return num + getSum(num -1);
         }
     }
-
-
 }

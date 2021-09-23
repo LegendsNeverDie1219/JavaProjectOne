@@ -1,4 +1,4 @@
-package com.huawei.nce.javabase.day08.objectoriented;
+package com.huawei.nce.javabase.day08.objectoriented.transfer;
 
 /**
  * TODO
