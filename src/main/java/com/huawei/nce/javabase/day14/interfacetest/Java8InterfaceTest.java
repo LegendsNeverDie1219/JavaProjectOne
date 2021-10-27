@@ -47,13 +47,26 @@ class Father {
     }
 }
 
+/**
+ * 1.如果一个实现类实现了一个接口,接口中的方法都是默认方法,
+ * 则该实现类可以不用重写这些默认方法, 直接new一个实现类实例, 就可以调用这个接口中的静态方法
+ *
+ * 2.如果一个实现类 实现了多个接口 ,接口中方法都是默认方法 && 方法名称都相同
+ * 则该实现类才需要重写这些默认方法. 不然 new实例.调用方法的时候,不知道调用那个接口中的默认方法.
+ *
+ * 3.如果一个实现类 实现了多个接口 ,接口中方法都是默认方法 && 方法名称都相同
+ * && 该实现类继承了一个父类.父类中也有该名称的方法
+ * 则不需要重写该方法.默认调用父类的这个方法
+ */
 class Man extends Father implements Filial,Spoony {
+//    @Override
+//    public void help() {
+//      //  Filial.super.help();
+//
+//        super.help();
+//        Filial.super.help();
+//        Spoony.super.help();
+//        System.out.println("我该救谁呢?");
+//    }
 
-    @Override
-    public void help() {
-        super.help();
-        Filial.super.help();
-        Spoony.super.help();
-        System.out.println("我该救谁呢?");
-    }
 }
