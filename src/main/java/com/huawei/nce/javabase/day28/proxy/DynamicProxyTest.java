@@ -22,6 +22,5 @@ public class DynamicProxyTest {
         NikeClothFactory nikeClothFactory = new NikeClothFactory();
         ClothFactory proxyInstance1 = (ClothFactory)DynamicProxyFactory.getProxyInstance(nikeClothFactory);
         proxyInstance1.produceCloth();
-
     }
 }
