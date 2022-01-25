@@ -102,6 +102,18 @@ public class StreamTest {
         // java.lang.ClassCastException: Employee cannot be cast to java.lang.Comparable
        // employeeList.stream().sorted().forEach(System.out::println);
         // 先按照id,再按照名称排序
+        extracted(employeeList);
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
+        // 先按照id倒叙.再按照名称
+//        employeeList.stream().sorted(Comparator.comparing(Employee::getName)).sorted(Comparator.comparing(Employee::getId,
+//                (id1,id2) -> -id1.compareTo(id2))).forEach(System.out::println);
+        employeeList.stream().sorted(Comparator.comparing(Employee::getName))
+                .sorted(Comparator.comparing(Employee::getId, Comparator.reverseOrder())).forEach(System.out::println);
+        System.out.println("************************************************");
+        employeeList.stream().sorted(Comparator.comparing(Employee::getId).thenComparing(Employee::getName)).forEach(System.out::println);
+    }
+
+    private void extracted(List<Employee> employeeList) {
         employeeList.stream().sorted((o1, o2) -> {
             int result = o1.getId().compareTo(o2.getId());
             if (result == 0) {
@@ -109,13 +121,6 @@ public class StreamTest {
             }
             return result;
         }).forEach(System.out::println);
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-        // 先按照id倒叙.再按照名称
-//        employeeList.stream().sorted(Comparator.comparing(Employee::getName)).sorted(Comparator.comparing(Employee::getId,
-//                (id1,id2) -> -id1.compareTo(id2))).forEach(System.out::println);
-        employeeList.stream().sorted(Comparator.comparing(Employee::getName)).sorted(Comparator.comparing(Employee::getId, Comparator.reverseOrder())).forEach(System.out::println);
-        System.out.println("************************************************");
-        employeeList.stream().sorted(Comparator.comparing(Employee::getId).thenComparing(Employee::getName)).forEach(System.out::println);
     }
 
     // 将一个字符串转化为一个流.

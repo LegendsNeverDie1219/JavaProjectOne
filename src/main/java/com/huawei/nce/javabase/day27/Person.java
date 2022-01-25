@@ -10,10 +10,6 @@ import java.io.Serializable;
  * @author Administrator
  * @date 2021/11/2 22:29
  */
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
 @ToString
 public class Person implements Serializable {
     /**
@@ -26,5 +22,30 @@ public class Person implements Serializable {
      */
     private static final long serialVersionUID = -8074329006016353957L;
     private String name;
+
+    public Person() {
+    }
+
+    public Person(String name, Integer age) {
+        this.age = age;
+        this.name = name;
+    }
+
     private Integer age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }
