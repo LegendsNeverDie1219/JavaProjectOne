@@ -23,7 +23,6 @@ public class CyclicBarrierTest {
 
             System.out.println("汇总2 ...");
         });
-        //for(int u = 0, u < 2;u ++)//开两次屏障使用
         for(int i = 0;i < 3;i ++) {
             new Thread(() -> {
                 try {
