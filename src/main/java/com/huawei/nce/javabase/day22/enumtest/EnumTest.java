@@ -31,6 +31,7 @@ public class EnumTest {
      * 情况二:枚举类中的众多对象,分贝实现接口中的抽象方法
      */
     public static void main(String[] args) {
+       // Season.SPRING = null;
         Season spring = Season.SPRING;
         // Season{seasonName='春季', seasonDesc='春暖花开'}
         System.out.println(spring.toString());

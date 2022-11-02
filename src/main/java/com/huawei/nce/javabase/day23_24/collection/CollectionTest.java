@@ -67,7 +67,7 @@ public class CollectionTest {
         System.out.println(" coll.contains(new Person(\"jerry\", 20)): " +
                 coll.contains(new Person("jerry", 20)));
         // 7.containsAll(Collectinon coll)
-        List<String> strings = Arrays.asList("tom", "jane");
+        List<String> strings = Arrays.asList("tom", "jane","hds");
         System.out.println("coll.containsAll(strings): " + coll.containsAll(strings));
         // 8.remove(Object obj)
         coll.remove(123);
@@ -78,15 +78,19 @@ public class CollectionTest {
     }
     @Test
     public void test3() {
-        Collection coll = new ArrayList();
-        coll.add(123);
-        coll.add(456);
-        coll.add(new String("jane"));
-        coll.add(new Person("jerry", 20));
-        System.out.println(coll);
-        // 10.retainAll(Collection coll) 取当前集合和coll的交集.并返回给当前集合.
-        boolean b = coll.retainAll(Arrays.asList(123, 456));
-        System.out.println(coll);
+        Collection currentList = new ArrayList();
+        currentList.add(123);
+        currentList.add(456);
+        // currentList.add(new String("jane"));
+        // currentList.add(new Person("jerry", 20));
+        System.out.println("currentList1:" + currentList);
+        // 10.retainAll(Collection coll) 取当前集合和coll的交集.并返回给当前集合. 如果当前集合存在移除元素的动作,则返回true,否则false
+        List<Integer> coll = Arrays.asList(123, 456,789);
+        boolean b = currentList.retainAll(coll);
+        System.out.println(currentList); //[123, 456]
+        System.out.println("currentList2:" + currentList);
+        System.out.println(b); // true
+        System.out.println(coll); // [123, 456, 789]
     }
 
     @Test

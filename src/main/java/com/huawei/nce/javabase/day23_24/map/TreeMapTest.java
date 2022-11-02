@@ -17,7 +17,7 @@ public class TreeMapTest {
     public void test1() {
         Map<User,Integer> map = new TreeMap<>();
         map.put(new User("Tom", 23), 98);
-        map.put(new User("Jerry", 32), 89);
+        map.put(new User("Jack", 32), 89);
         map.put(new User("Jack", 20), 76);
         map.put(new User("Rose", 18), 100);
 
@@ -35,17 +35,17 @@ public class TreeMapTest {
         //User(name=Jack, age=20), 76
         //User(name=Tom, age=23), 98
         //User(name=Jerry, age=32), 89
-//        Map<User,Integer> map = new TreeMap<>(new Comparator<User>() {
-//            @Override
-//            public int compare(User o1, User o2) {
-//                int number = Integer.compare(o1.getAge(), o2.getAge());
-//                return number == 0 ? o1.getName().compareTo(o2.getName()) : number;
-//            }
-//        });
+       Map<User,Integer> map = new TreeMap<>(new Comparator<User>() {
+           @Override
+           public int compare(User o1, User o2) {
+               int number = Integer.compare(o1.getAge(), o2.getAge());
+               return number == 0 ? o1.getName().compareTo(o2.getName()) : number;
+           }
+       });
 
-        Map<User,Integer> map = new TreeMap<>(Comparator.comparingInt(User::getAge).thenComparing(User::getName));
+        // Map<User,Integer> map = new TreeMap<>(Comparator.comparingInt(User::getAge).thenComparing(User::getName));
         map.put(new User("Tom", 23), 98);
-        map.put(new User("Jerry", 32), 89);
+        map.put(new User("Jack", 32), 89);
         map.put(new User("Jack", 20), 76);
         map.put(new User("Rose", 18), 100);
         map.forEach((key, value) -> {

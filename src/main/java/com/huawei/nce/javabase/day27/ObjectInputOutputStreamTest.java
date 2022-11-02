@@ -80,8 +80,7 @@ public class ObjectInputOutputStreamTest {
      * <p>
      * 当其他程序获取了这种字节流, 就可以恢复成一个对象.
      * <p>
-     * 前提: 该对象所在的类必须实现Serializable标识接口, 并且对象中属性也是可以序列化的.
-     * 同时也要在类中添加serializable全局常量字段.
+     * 前提: 该对象所在的类必须实现Serializable标识接口, 并且对象中属性也是可以序列化的.同时也要在类中添加serialVersionUID全局常量字段.
      * 否则会报NotSerializableException的异常.
      */
     @Test

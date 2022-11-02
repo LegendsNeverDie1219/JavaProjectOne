@@ -18,7 +18,7 @@ public class Window5 implements Runnable {
      * synchronized 和Lock锁的异同
      * 相同: 两者都可以解决线程安全的问题
      * 区别: synchronized 对应的同步代码块/同步方法,在执行完同步代码块/同步方法之后,会自动释放锁
-     *     Lock需要调用lock.lock() 方法启动同步. 调用lock.unlock() 结束同步,释放锁.
+     *     Lock需要调用lock.lock() 方法获取锁, 启动同步. 调用lock.unlock() 释放锁,结束同步.
      */
     @Override
     public void run() {

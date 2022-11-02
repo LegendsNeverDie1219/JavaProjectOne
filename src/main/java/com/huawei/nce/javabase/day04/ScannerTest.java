@@ -1,5 +1,6 @@
 package com.huawei.nce.javabase.day04;
 // 1.导包
+
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,8 @@ public class ScannerTest {
         // 1.测试canner中nextLine()方法和next()方法的区别
         // testNextAndNextLine();
         // 2.testOther
-        testOther();
+        //testOther();
+        testNextAndNextLine2();
     }
 
     private static void testOther() {
@@ -63,5 +65,25 @@ public class ScannerTest {
         System.out.println("请输入字符串（nextLine）：");
         String str1 = scanner.nextLine();
         System.out.println(str1);
+    }
+    
+    public static void testNextAndNextLine2() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("请输入字符串（next1）：");
+        String str1 = input.next();
+        System.out.println(str1);
+
+        System.out.println("请输入字符串（nextLine）：");//曹老板很有钱
+        String str = input.nextLine();
+        System.out.println(str);
+
+
+
+        System.out.println("请输入字符串（next2）：");
+        String str2 = input.next();
+        System.out.println(str2);
+
+
     }
 }

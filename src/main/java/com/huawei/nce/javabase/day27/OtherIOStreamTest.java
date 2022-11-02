@@ -24,32 +24,32 @@ public class OtherIOStreamTest {
      * 从键盘输入字符串，要求将读取到的整行字符串转成大写输出。然后继续
      * 进行输入操作，直至当输入“e”或者“exit”时，退出程序。
      */
-//    public static void main(String[] args) {
-//        System.out.println("请输入信息:(退出输入e或者exit)");
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-//
-//        try {
-//            String oneRowData = bufferedReader.readLine();
-//            while (oneRowData != null) {
-//                if ("e".equalsIgnoreCase(oneRowData)) {
-//                    System.out.println("安全退出");
-//                    break;
-//                }
-//                // 将这个行数据转化为大写输出.
-//                System.out.println("-->" + oneRowData.toUpperCase(Locale.ENGLISH));
-//                System.out.println("继续输入信息");
-//                oneRowData = bufferedReader.readLine();
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                bufferedReader.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+   // public static void main(String[] args) {
+   //     System.out.println("请输入信息:(退出输入e或者exit)");
+   //     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+   //
+   //     try {
+   //         String oneRowData = bufferedReader.readLine();
+   //         while (oneRowData != null) {
+   //             if ("e".equalsIgnoreCase(oneRowData)) {
+   //                 System.out.println("安全退出");
+   //                 break;
+   //             }
+   //             // 将这个行数据转化为大写输出.
+   //             System.out.println("-->" + oneRowData.toUpperCase(Locale.ENGLISH));
+   //             System.out.println("继续输入信息");
+   //             oneRowData = bufferedReader.readLine();
+   //         }
+   //     } catch (IOException e) {
+   //         e.printStackTrace();
+   //     } finally {
+   //         try {
+   //             bufferedReader.close();
+   //         } catch (IOException e) {
+   //             e.printStackTrace();
+   //         }
+   //     }
+   // }
 
     /**
      *  重定向：通过System类的setIn，setOut方法对默认设备进行改变。
@@ -159,7 +159,7 @@ public class OtherIOStreamTest {
     @Test
     public void testDataStream1() {
         try (DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("destData.dat"))) {
-            dataOutputStream.writeUTF("我爱北京天安门广场");
+            dataOutputStream.writeUTF("我爱北京天安门广场1219");
             dataOutputStream.writeBoolean(false);
             //dataOutputStream.writeInt(7758258);
             dataOutputStream.writeLong(123456789L);
@@ -177,12 +177,14 @@ public class OtherIOStreamTest {
         try (DataInputStream dataInputStream = new DataInputStream(new FileInputStream("destData.dat"))) {
             String s = dataInputStream.readUTF();
             System.out.println(s);
-            long l = dataInputStream.readLong();
-            System.out.println(l);
+
 //            int i = dataInputStream.readInt();
 //            System.out.println(i);
             boolean b = dataInputStream.readBoolean();
             System.out.println(b);
+
+            long l = dataInputStream.readLong();
+            System.out.println(l);
         } catch (IOException e) {
             e.printStackTrace();
         }

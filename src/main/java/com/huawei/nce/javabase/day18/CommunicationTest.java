@@ -36,7 +36,6 @@ public class CommunicationTest {
 }
 class Communication implements Runnable{
     private int number = 1;
-    private Object obj = new Object();
     @Override
     public void run() {
         while (true) {
@@ -44,7 +43,7 @@ class Communication implements Runnable{
                 this.notify();
                 if (number <=100) {
                     try {
-                        Thread.sleep(10);
+                        //Thread.sleep(10);
                         System.out.println(Thread.currentThread().getName() + "-> " + number);
                         number++;
                         // 当前线程打印完,并且已经自增,调用wait() 进入阻塞,等待另一个线程打印

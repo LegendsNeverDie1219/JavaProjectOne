@@ -30,7 +30,7 @@ public class Window4 implements Runnable {
     @Override
     public void run() {
         while (true) {
-            if (sellTickets()) {
+            if (this.sellTickets()) {
                 break;
             }
         }

@@ -40,6 +40,7 @@ public class IOTest {
      */
     @Test
     public void testFileReaderRead() {
+        System.out.println(System.getProperty("user.dir"));
         // 1.实例化File 对象
         File file = new File("hello.txt");
         FileReader fileReader = null;
@@ -102,7 +103,7 @@ public class IOTest {
 
     @Test
     public void testFileWriterWrite() {
-        File file = new File("hello1.txt");
+        File file = new File("hello100.txt");
         Writer writer = null;
         String lineSeparator = System.lineSeparator();
         try {

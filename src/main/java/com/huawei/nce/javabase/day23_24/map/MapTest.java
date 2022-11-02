@@ -45,7 +45,7 @@ public class MapTest {
      *    在实例化之后,底层创建了一个长度为16的一维数组 transient Entry<K,V>[] table = new Entry[16]
      *    ...可能已经执行官过了多次put
      *    map.put(key1,value1)
-     *    首先,调用key1对象所在类的hashCode() 方法.得到一个哈希值,然后基于某种算法,得到这个哈希值对应Entry[]数组的索引
+     *    首先,调用key1对象所在类的hashCode() 方法.得到一个哈希值,然后基于哈希算法,得到这个哈希值对应Entry[]数组的索引
      *    接着, 判断这个索引位置是否为空
      *      如果为空, 则将这个Entry对象放到该数组位置 ------情况一
      *      如果不为空,则意味着该索引位置存在1-多个元素(其中以链表形式存在),其次,拿key1的哈希值与该位置其他元素的哈希值进行比较
@@ -82,6 +82,8 @@ public class MapTest {
 
     @Test
     public void test1() {
+        Map<String,Object> hashMap = new HashMap<>(10);
+        System.out.println(hashMap);
         // null
         System.out.println(staticMap.put(12, "CC"));
         // CC

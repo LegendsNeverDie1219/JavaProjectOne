@@ -76,7 +76,9 @@ public class TestJava8Stream {
         Stream.of(1, 2, 3, 4, 5, 5, 4, 3, 2, 1, 10, 12, 14, 14).filter((x) -> x >= 5).distinct()
                 .skip(2).limit(2).forEach(System.out::println);
         // 2.映射1 即map()
-        Arrays.asList("a,b,c", "1,2,3").stream().map((str) -> str.replaceAll(",", ""))
+        Arrays.asList("a,b,c", "1,2,3").stream().map(str -> {
+            return str.replaceAll(",", "");
+        })
                 .forEach(System.out::println);
         // 3. 映射2 flatMap() 将流中的每一个元素转化为一个stream,然后将所有流连接成一个流
         Arrays.asList("a,b,c", "1,2,3").stream().flatMap((str) -> {
@@ -255,7 +257,9 @@ public class TestJava8Stream {
                 new NeInterface(null, "FE4/2/1", "GE")
         );
         List<NeInterface> distinctedNeInterfaceList =
-                neInterfaces.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(NeInterface::getIfName))), ArrayList::new));
+                neInterfaces.stream().collect(Collectors.collectingAndThen(
+                        Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(NeInterface::getIfName))),
+                        ArrayList::new));
         distinctedNeInterfaceList.stream().forEach(System.out::println);
     }
 

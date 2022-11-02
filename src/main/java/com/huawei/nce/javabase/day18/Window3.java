@@ -53,17 +53,18 @@ public class Window3 extends Thread {
      * 7.释放锁的操作VS不释放锁的操作
      * 释放锁的操作:
      *   ①当前线程的同步代码块/同步方法执行完成
-     *   ②当前线程的同步代码块/同步方法遇到brek,return结束的
+     *   ②当前线程的同步代码块/同步方法遇到break,return结束的
      *   ③当前线程的同步代码块/同步方法执行过程遇到了为处理的Error/Exception
      *   ④当前线程的同步代码块/同步方法 中执行了当前线程对象.wait().当前线程暂停,释放锁.
      * 不释放锁的操作
-     * ①当前线程的同步代码块/同步方法  调用了wait() / yield()(屈服,主动放弃时间片)
+     * ①线程执行同步代码块或同步方法时，程序调用Thread.sleep()、
+     * Thread.yield()方法暂停当前线程的执行
      * ②当前线程的同步代码块/同步方法 ,  其他线程调用了该线程的suspend(),将该线程挂起.但不会释放锁.
      */
 //    @Override
 //    public void run() {
 //        while (true) {
-////            synchronized (object) {
+// //            synchronized (object) {
 //              synchronized (Window3.class) {
 //                if (ticket > 0) {
 //                    try {
@@ -82,7 +83,7 @@ public class Window3 extends Thread {
     @Override
     public void run() {
         while (true) {
-            if (sellTickets()) {
+            if (Window3.sellTickets()) {
                 break;
             }
         }

@@ -89,11 +89,12 @@ public class FileTest {
         //E:\IdeaProjects\javaproject\JavaModuleOne\hello.txt
         // E:\IdeaProjects\javaproject\JavaModuleOne\hello1.txt
         System.out.println(file1.getAbsoluteFile());
+        System.out.println(file1.getAbsolutePath());
         //hello.txt
         // hello1.txt
         System.out.println(file1.getPath());
         //hello.txt
-        // hello1.txt
+        // hello1.txt todo
         System.out.println(file1.getName());
         //null
         // null

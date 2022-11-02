@@ -17,10 +17,12 @@ public class FatherTest {
         Son1 son1 = new Son1();
         son1.setT1(new Object());
         son1.setT2(new Object());
+        Object t1 = son1.getT1();
 
         Son2 son2 = new Son2();
         son2.setT1(5);
         son2.setT2("a");
+        Integer t11 = son2.getT1();
 
         Son3<Long> son3 = new Son3();
         son3.setT1(55);

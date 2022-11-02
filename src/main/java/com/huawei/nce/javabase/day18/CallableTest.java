@@ -26,7 +26,8 @@ public class CallableTest {
      */
     public static void main(String[] args) {
         NumberThread callableImpl = new NumberThread();
-        FutureTask futureTask = new FutureTask<>(callableImpl);
+        FutureTask<Integer> futureTask = new FutureTask<>(callableImpl);
+
         new Thread(futureTask).start();
 
         try {
@@ -38,7 +39,7 @@ public class CallableTest {
     }
 }
 
-class NumberThread implements Callable {
+class NumberThread implements Callable<Integer> {
 
     /**
      * Computes a result, or throws an exception if unable to do so.
@@ -48,7 +49,7 @@ class NumberThread implements Callable {
      * @throws Exception if unable to compute a result
      */
     @Override
-    public Object call() throws Exception {
+    public Integer call() throws Exception {
         int sum = 0;
         for (int i = 0; i <= 100; i++) {
             if (i % 2 == 0) {

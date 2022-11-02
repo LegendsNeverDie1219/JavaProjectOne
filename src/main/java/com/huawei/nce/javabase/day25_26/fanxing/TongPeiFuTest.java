@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -49,14 +48,14 @@ public class TongPeiFuTest {
         List<?> list = null;
         list = list1;
         list = list2;
-        print(list1);
-        print(list2);
+        // print(list1);
+        // print(list2);
 
         List<String> list3 = Lists.newArrayList("AA", "BB");
         list = list3;
         // 添加(写入) : 对于List<?> list 除了添加null之外, 不能向该集合中添加任何类型的元素.
-//        list.add("DD");
-//        list.add(1);
+       // list.add("DD");
+       // list.add(1);
         list.add(null);
         // 获取(读取) 对于List<?> list 允许读入数据.读取的数据类型为Object
         System.out.println(list.get(0));
@@ -65,13 +64,13 @@ public class TongPeiFuTest {
         }
     }
 
-    private void print(List<?> list) {
-        Iterator<?> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            Object next = iterator.next();
-            System.out.println(next);
-        }
-    }
+    // private void print(List<?> list) {
+    //     while (iterator.hasNext()) {
+    //         Iterator<?> iterator = list.iterator();
+    //         Object next = iterator.next();
+    //         System.out.println(next);
+    //     }
+    // }
 
     /**
      * 通配符的上限:

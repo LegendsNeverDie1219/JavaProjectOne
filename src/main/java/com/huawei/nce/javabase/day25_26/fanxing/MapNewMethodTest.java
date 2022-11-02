@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 /**
@@ -79,6 +80,7 @@ public class MapNewMethodTest {
                         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (oldValue, newValue) -> oldValue, LinkedHashMap::new));
         System.out.println(collect2);
+        AtomicReference atomicReference = new AtomicReference();
     }
 
     @Test

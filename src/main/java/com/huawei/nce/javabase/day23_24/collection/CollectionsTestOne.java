@@ -31,7 +31,10 @@ public class CollectionsTestOne {
 
     @Test
     public void test1() {
+
         System.out.println("原始list: " + stringList);
+       // List<String> strings = Collections.synchronizedList(stringList);
+
 
         Collections.reverse(stringList);
         System.out.println("Collections.reverse: " + stringList);

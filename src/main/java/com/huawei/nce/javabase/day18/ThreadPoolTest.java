@@ -1,8 +1,6 @@
 package com.huawei.nce.javabase.day18;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
 /**
  * TODO
@@ -43,21 +41,28 @@ public class ThreadPoolTest {
      * 行命令或者定期地执行。
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         //  ExecutorService extends Executor
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor)Executors.newFixedThreadPool(10);
         // ThreadPoolExecutor extends AbstractExecutorService
         // public abstract class AbstractExecutorService implements ExecutorService
-        ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) executorService;
+       // ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) executorService;
         threadPoolExecutor.setCorePoolSize(15);
         threadPoolExecutor.setMaximumPoolSize(20);
         // 适用于runnable
-        executorService.execute(new Window4());
+        threadPoolExecutor.execute(new Window4());
 
         // 适用于Callable
-        executorService.submit(new NumberThread());
-        executorService.shutdown();
+        Future<Integer> future = threadPoolExecutor.submit(new NumberThread());
+        Integer integer = future.get();
+        // FutureTask<Integer> futureTask = new FutureTask<>(new NumberThread());
+       // Future<?> submit = threadPoolExecutor.submit(futureTask);
+        threadPoolExecutor.shutdown();
 
+        ExecutorService executorService1 = Executors.newSingleThreadExecutor();
+        ExecutorService executorService2 = Executors.newFixedThreadPool(3);
 
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2);
     }
 }

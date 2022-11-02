@@ -21,9 +21,9 @@ public class DateTimeTest {
     @Test
     public void test1() {
         long time = System.currentTimeMillis();
-        // 1633836436014
+        // 1633 8364 36014
         // 返回的是1970年1月1日0时0分0秒到此刻的毫秒数
-        System.out.println(time);
+        System.out.println(time); // 1662 7813 14787
     }
 
     /**
@@ -36,7 +36,7 @@ public class DateTimeTest {
         Date date = new Date();
         System.out.println(date.toString()); // Sun Oct 10 11:38:16 CST 2021
 
-        System.out.println(date.getTime()); //1633837096323
+        System.out.println(date.getTime()); //1662 7813 26683
 
         // 构造器二:Date(long date) 创建一个对应毫秒数的Date对象
         System.out.println("构造器二:Date(long date) 创建一个对应毫秒数的Date对象");
