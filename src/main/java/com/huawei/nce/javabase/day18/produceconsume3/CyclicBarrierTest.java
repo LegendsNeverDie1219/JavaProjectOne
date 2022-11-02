@@ -23,6 +23,7 @@ public class CyclicBarrierTest {
 
             System.out.println("汇总2 ...");
         });
+        // rel分支添加了一行代码
         for(int i = 0;i < 3;i ++) {
             new Thread(() -> {
                 try {
