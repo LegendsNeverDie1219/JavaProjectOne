@@ -3,6 +3,7 @@ package com.huawei.nce.javabase.day25_26.fanxing;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,8 +32,8 @@ public class GenericTestTwo {
         SubOrder subOrder = new SubOrder();
         subOrder.setOrderT(123);
 
-        SubOrder2<Long> subOrder2 = new SubOrder2<>();
-        subOrder2.setOrderT(123456L);
+        SubOrder2<String> subOrder2 = new SubOrder2<>();
+        subOrder2.setOrderT("123456L");
     }
 
     @Test
@@ -46,10 +47,15 @@ public class GenericTestTwo {
     @Test
     public void test3() {
         Order<String> order = new Order<>();
-        order.setArr(new String[] {"aa", "bb"});
+        order.setArr(new String[] {"1", "2"});
 
-        List<String> strings = order.copyFromArrayToList(order.getArr());
-        System.out.println(strings);
+        String[] arr = order.getArr();
+        Integer[] integerArr = Arrays.stream(arr).map(Integer::valueOf).toArray(Integer[]::new);
+
+
+        List<Integer> integerList = order.copyFromArrayToList(integerArr);
+
+        System.out.println(integerList);
     }
 
 }

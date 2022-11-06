@@ -2,6 +2,7 @@ package com.huawei.nce.javabase.day20;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
@@ -72,6 +73,8 @@ public class StringAPITest {
     public void test2() {
         String str1 = "helloworldlor";
         // true
+        PrintStream dss = System.out;
+        dss.println("ddddddd");
         System.out.println(str1.startsWith("he"));
         // false
         System.out.println(str1.startsWith("He"));

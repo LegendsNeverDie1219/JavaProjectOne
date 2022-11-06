@@ -40,14 +40,14 @@ public class Order<T> {
     // 类的内部结构就可以使用类的泛型
     T orderT;
 
-   // T[] arr = new T[];
+   // T[] arr1 = new T[10];
     private T[] arr = (T[]) new Object[10];
 
     public Order() {
     }
 
-//    public Order<String,Integer,Object>() {
-//    }
+   // public Order<String,Integer,Object>() {
+   // }
 
     public Order(String orderName, int orderId, T orderT) {
         this.orderName = orderName;

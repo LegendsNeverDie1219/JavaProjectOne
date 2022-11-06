@@ -52,7 +52,7 @@ public class TitleTwo {
                 .sorted(Map.Entry.comparingByKey())
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .collect(Collectors.toMap(Map.Entry::getKey,
-                        Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+                        Map.Entry::getValue, (oldValue, newValue) -> newValue, LinkedHashMap::new));
         System.out.println("请输入要截取的前?个单词");
         int firstFewWorld = scanner.nextInt();
         sortedMap.keySet().stream().limit(firstFewWorld).forEach(System.out::println);

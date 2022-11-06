@@ -62,6 +62,9 @@ public class ListRmDuplicate {
                 .collectingAndThen(
                         Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(Player::getName))),
                         ArrayList::new));
+        // TreeSet<Player> collect =
+        //         playerList.stream().collect(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(Player::getName))));
+
         newList.forEach(System.out::println);
     }
 
