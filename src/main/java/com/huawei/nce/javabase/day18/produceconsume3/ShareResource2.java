@@ -25,8 +25,7 @@ public class ShareResource2 {
         String data = String.valueOf(i);
 
         while (flag) {
-            // boolean isSuccess = blockingQueue.offer(data, 2, TimeUnit.SECONDS);
-            boolean isSuccess = blockingQueue.offer(data);
+            boolean isSuccess = blockingQueue.offer(data, 2, TimeUnit.SECONDS);
             if (isSuccess) {
                 System.out.println(Thread.currentThread().getName() + "\t往队列中追加数据: " + data + " 成功");
             } else {

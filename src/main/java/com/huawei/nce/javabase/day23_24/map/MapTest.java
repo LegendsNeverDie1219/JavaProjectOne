@@ -43,7 +43,7 @@ public class MapTest {
      *      3.1数组+ 链表(jdk7.0以及之前)
      *    HashMap map = new HashMap()
      *    在实例化之后,底层创建了一个长度为16的一维数组 transient Entry<K,V>[] table = new Entry[16]
-     *    ...可能已经执行官过了多次put
+     *    ...可能已经执行过了多次put
      *    map.put(key1,value1)
      *    首先,调用key1对象所在类的hashCode() 方法.得到一个哈希值,然后基于哈希算法,得到这个哈希值对应Entry[]数组的索引
      *    接着, 判断这个索引位置是否为空

@@ -87,6 +87,7 @@ public class MapNewMethodTest {
     public void test3() {
         Integer integer1 = unsortMap.computeIfAbsent("aafsdf", key -> this.genValue(key));
         // 6
+        System.out.println(unsortMap);
         System.out.println(integer1);
         Integer integer2 = unsortMap.computeIfAbsent("n", this::genValue);
         // 99

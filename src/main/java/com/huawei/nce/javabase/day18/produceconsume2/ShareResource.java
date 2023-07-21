@@ -12,12 +12,12 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ShareResource {
     private  Integer number = 0;
-    private final Lock lock = new ReentrantLock();
-    private final Condition condition = lock.newCondition();
+    private final Lock reentrantLock = new ReentrantLock();
+    private final Condition condition=  reentrantLock.newCondition();
     // 线程 操作 资源类
     // 判断 干活 通知.
     public void increaseNumber() {
-        lock.lock();
+        reentrantLock.lock();
         try {
             while (number != 0) {
                 condition.await();
@@ -28,12 +28,12 @@ public class ShareResource {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            lock.unlock();
+            reentrantLock.unlock();
         }
     }
 
     public void decreaseNumber() {
-        lock.lock();
+        reentrantLock.lock();
         try {
             while (number == 0) {
                 condition.await();
@@ -44,7 +44,7 @@ public class ShareResource {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            lock.unlock();
+            reentrantLock.unlock();
         }
     }
 }

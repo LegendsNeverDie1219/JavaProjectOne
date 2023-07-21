@@ -37,7 +37,7 @@ public class MyThread extends Thread {
      * getName() 获取当前线程的名称
      * setName() 设置当前线程的名称
      * yield()  当前线程执行cpu的执行权.
-     * join() 在线程a中调用线程b的join()方法.会使线程a进入阻塞状态.知道线程b执行完成整个run()方法.才结束阻塞.
+     * join() 在线程a中调用线程b的join()方法.会使线程a进入阻塞状态.直到线程b执行完成整个run()方法.才结束阻塞.
      * stop()已过时,强制结束当前线程
      * isAlive() 判断当前线程是否存活
      *

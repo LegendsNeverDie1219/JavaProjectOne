@@ -11,6 +11,7 @@ import org.springframework.util.CollectionUtils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
+import java.util.function.Function;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -110,6 +111,19 @@ public class TestJava8Stream {
                 return o1.getName().compareTo(o2.getName());
             }
         }).forEach(System.out::println);
+
+        studentList.stream().sorted(new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return 0;
+            }
+        }).map(new Function<Student, Object>() {
+
+            @Override
+            public Object apply(Student student) {
+                return null;
+            }
+        }).collect(Collectors.toList());
         //按照年龄正序排序,再按照id正序排序
         System.out.println("调用Comparator.comparing()静态方法,多重排序一 ======================");
         studentList.stream()

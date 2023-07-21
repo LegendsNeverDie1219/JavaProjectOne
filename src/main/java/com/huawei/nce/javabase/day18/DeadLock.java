@@ -29,7 +29,7 @@ public class DeadLock {
                     }
                 }
             }
-        }).start();
+        },"AA").start();
 
 
         new Thread(new Runnable() {
@@ -43,7 +43,7 @@ public class DeadLock {
                     }
                 }
             }
-        }).start();
+        },"BB").start();
     }
 }
 
